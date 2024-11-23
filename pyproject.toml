@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "aiwolf-nlp-json-converter"
 license = { file = "LICENSE" }
 requires-python = ">=3.8"
-readme = "README.md"
+readme = ".github/README.md"
 dependencies = ["aiwolf-nlp-common >= 0.2.1"]
 authors = [
   { name = "aiwolfdial", email = "aiwolf@kanolab.net" },
