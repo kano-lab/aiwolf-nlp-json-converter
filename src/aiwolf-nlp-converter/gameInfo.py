@@ -1,7 +1,12 @@
 from aiwolf_nlp_common.protocol import CommunicationProtocol
 from aiwolf_nlp_common.protocol.info.list import VoteInfo, VoteList, AttackVoteList
 from aiwolf_nlp_common.protocol.info.result import DivineResult, MediumResult
-from aiwolf_nlp_common.protocol.info.map import AgentRole, RoleMap
+from aiwolf_nlp_common.protocol.info.map import (
+    AgentRole,
+    RoleMap,
+    AgentStatus,
+    StatusMap,
+)
 
 
 class gameInfoConverter:
@@ -25,7 +30,11 @@ class gameInfoConverter:
         game_info["lastDeadAgentList"] = cls.get_lastDeadAgentList(
             attacked_agent=protocol.info.attacked_agent
         )
-        game_info["roleMap"] = protocol.info.executed_agent
+        game_info["roleMap"] = cls.get_role_map(role_map=protocol.info.role_map)
+        game_info["statusMap"] = cls.get_status_map(status_map=protocol.info.status_map)
+        game_info["voteList"] = cls.get_vote_list_info(
+            vote_list=protocol.info.vote_list
+        )
 
     def get_vote_list_info(vote_list: VoteList | AttackVoteList) -> list[dict]:
         result: list = list()
@@ -55,7 +64,7 @@ class gameInfoConverter:
 
         return result
 
-    def get_lastDeadAgentList(attacked_agent: str | None) -> list:
+    def get_lastDeadAgentList(attacked_agent: str | None) -> list[str]:
         result: list = []
 
         if attacked_agent is not None:
@@ -68,6 +77,13 @@ class gameInfoConverter:
 
         role_map_element: AgentRole
         for role_map_element in role_map:
-            result[role_map_element.agent] = role_map_element.role
+            result[role_map_element.agent] = role_map_element.role.en
 
         return result
+
+    def get_status_map(status_map: StatusMap) -> dict:
+        result: dict = dict()
+
+        status_map_element: AgentStatus
+        for status_map_element in status_map:
+            result[status_map_element.agent] = status_map_element.status.value
