@@ -9,7 +9,7 @@ from .whisperHistory import whisperHistoryConverter
 
 class AIWolfNLPJsonConverter:
     @classmethod
-    def get_json_dict(received_str: str) -> dict:
+    def get_json_dict(cls, received_str: str) -> dict:
         protocol: CommunicationProtocol = CommunicationProtocol.initialize_from_json(
             received_str=received_str
         )
