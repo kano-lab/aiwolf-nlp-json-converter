@@ -1,5 +1,5 @@
 from aiwolf_nlp_common.protocol import CommunicationProtocol
-from talkHistory import talkHistoryConverter
+from .talkHistory import talkHistoryConverter
 
 
 class whisperHistoryConverter(talkHistoryConverter):

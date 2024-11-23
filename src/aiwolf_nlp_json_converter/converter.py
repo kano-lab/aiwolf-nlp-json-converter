@@ -1,8 +1,8 @@
 from aiwolf_nlp_common.protocol import CommunicationProtocol
-from gameInfo import gameInfoConverter
-from gameSetting import gameSettingConverter
-from talkHistory import talkHistoryConverter
-from whisperHistory import whisperHistoryConverter
+from .gameInfo import gameInfoConverter
+from .gameSetting import gameSettingConverter
+from .talkHistory import talkHistoryConverter
+from .whisperHistory import whisperHistoryConverter
 
 
 class AIWolfNLPJsonConverter:
