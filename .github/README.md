@@ -1,4 +1,10 @@
 # aiwolf-nlp-json-converter
+人狼知能コンテスト自然言語処理部門は**2024冬季 国内大会**からゲームサーバの変更を行いました。 \
+これに伴い、情報伝達を行う際に[旧サーバプログラム](https://github.com/aiwolfdial/AIWolfNLPServer)とは異なるJsonが使用されるようになりました。\
+このプログラムは[新規サーバプログラム](https://github.com/kano-lab/aiwolf-nlp-server)から伝達される情報を[旧サーバプログラム](https://github.com/aiwolfdial/AIWolfNLPServer)から伝達される情報に変換するプログラムです。
+
+## 対象者
+人狼知能コンテスト2024冬季**以前**に人狼知能コンテスト(自然言語処理部門)の大会に参加された方で、過去のプログラムを流用したい方。
 
 ## 対応していないキー
 [旧ゲームサーバ](https://github.com/aiwolfdial/AIWolfNLPServer)から与えられる情報の内、本プログラムではいくつか含まれていない情報が存在します。 \
