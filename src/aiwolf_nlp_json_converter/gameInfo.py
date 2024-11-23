@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from aiwolf_nlp_common.protocol import CommunicationProtocol
 from aiwolf_nlp_common.protocol.info.list import VoteInfo, VoteList, AttackVoteList
 from aiwolf_nlp_common.protocol.info.result import DivineResult, MediumResult

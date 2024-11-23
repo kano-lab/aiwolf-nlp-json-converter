@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from aiwolf_nlp_common.protocol import CommunicationProtocol
 from aiwolf_nlp_common.protocol.setting.map import RoleNumInfo, RoleNumMap
 
