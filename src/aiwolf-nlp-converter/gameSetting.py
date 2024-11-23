@@ -7,6 +7,9 @@ class gameSettingConverter:
     def get_game_setting_dict(cls, protocol: CommunicationProtocol) -> dict:
         game_setting: dict = dict()
 
+        if protocol.is_setting_empty():
+            return None
+
         game_setting["enableNoAttack"] = protocol.setting.is_enable_no_attack
         game_setting["enableNoExecution"] = protocol.setting.is_enable_no_attack
         game_setting["maxAttackRevote"] = protocol.setting.max_attack_revote
