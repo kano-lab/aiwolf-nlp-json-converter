@@ -9,3 +9,7 @@
 - `englishTalkList`: 過去にここに割り当てられていた内容が`TalkList`と同一であったため、不要と判断し対応していません。
 - `existingRoleList`: `gameSetting`の`roleNumMap`から把握できる内容であるため不要と判断し対応していません。
 - `guardedAgent`: 騎士は5人人狼で使用しない予定の役職なので対応していません。
+- `latestAttackVoteList`: 5人人狼において使用されない項目の上、`attackVoteList`から確認できる内容であるため不要と判断し対応していません。
+- `latestExecutedAgent`: `executedAgent`の値から確認できる内容であるため不要と判断し対応していません。
+- `latestVoteList`: `voteList`から確認できる内容であるため不要と判断し対応していません。
+- `mediumResult`: 5人人狼において使用されない項目であるため不要と判断し対応していません。
