@@ -18,11 +18,11 @@ keywords = ["aiwolf"]
 
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "setuptools", "wheel"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["build>=1.2.2.post1", "pytest>=8.3.3", "twine>=5.1.1"]
+dev = ["build>=1.2.2.post1", "twine>=5.1.1"]
 lint = ["ruff>=0.7.4"]
 
 [project.urls]
