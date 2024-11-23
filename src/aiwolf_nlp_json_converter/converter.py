@@ -28,3 +28,5 @@ class AIWolfNLPJsonConverter:
         before_json_dict["whisperHistory"] = (
             whisperHistoryConverter.get_whisper_history_list(protocol=protocol)
         )
+
+        return before_json_dict
