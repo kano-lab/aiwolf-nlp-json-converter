@@ -36,7 +36,8 @@ class gameInfoConverter:
             vote_list=protocol.info.vote_list
         )
 
-    def get_vote_list_info(vote_list: VoteList | AttackVoteList) -> list[dict]:
+    @classmethod
+    def get_vote_list_info(cls, vote_list: VoteList | AttackVoteList) -> list[dict]:
         result: list = list()
 
         attack_vote_element: VoteInfo
@@ -49,7 +50,9 @@ class gameInfoConverter:
 
         return result
 
+    @classmethod
     def get_judgement_result(
+        cls,
         judgement_result: DivineResult | MediumResult,
     ) -> dict | None:
         result: dict = dict()
@@ -64,7 +67,8 @@ class gameInfoConverter:
 
         return result
 
-    def get_lastDeadAgentList(attacked_agent: str | None) -> list[str]:
+    @classmethod
+    def get_lastDeadAgentList(cls, attacked_agent: str | None) -> list[str]:
         result: list = []
 
         if attacked_agent is not None:
@@ -72,7 +76,8 @@ class gameInfoConverter:
 
         return result
 
-    def get_role_map(role_map: RoleMap) -> dict:
+    @classmethod
+    def get_role_map(cls, role_map: RoleMap) -> dict:
         result: dict = dict()
 
         role_map_element: AgentRole
@@ -81,7 +86,8 @@ class gameInfoConverter:
 
         return result
 
-    def get_status_map(status_map: StatusMap) -> dict:
+    @classmethod
+    def get_status_map(cls, status_map: StatusMap) -> dict:
         result: dict = dict()
 
         status_map_element: AgentStatus
