@@ -22,7 +22,7 @@ requires = ["hatchling", "setuptools", "wheel"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/aiwolf-nlp-json-converter"]
+packages = ["src/aiwolf_nlp_json_converter"]
 
 [dependency-groups]
 dev = ["build>=1.2.2.post1", "twine>=5.1.1"]
