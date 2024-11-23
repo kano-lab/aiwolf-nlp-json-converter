@@ -1,4 +1,4 @@
-# aiwolf-nlp-converter
+# aiwolf-nlp-json-converter
 
 ## 対応していないキー
 [旧ゲームサーバ](https://github.com/aiwolfdial/AIWolfNLPServer)から与えられる情報の内、本プログラムではいくつか含まれていない情報が存在します。 \
@@ -17,3 +17,10 @@
 - `remainWhisperMap`: 5人人狼において`whisper`は行われないため不要と判断し対応していません。
 - `talkList`:  旧サーバにおいて`INITIALIZE`,`DAILY_INITIALIZE`でのみ付与されていた情報である上、`talkHistory`から取得可能な内容であるため不要と判断し対応していません。
 - `whisperList`: 5人人狼において使用されない項目であるため不要と判断し対応していません。
+
+### ゲームの設定を示す情報 (gameSetting)
+- `enableRoleRequest`: 新サーバにおいて削除された機能であるため対応していません。
+- `validateUtterance`: 新サーバにおいて削除された機能であるため対応していません。
+- `votableInFirstDay`: 大会において初日は挨拶の日であり、その人に投票は行わないため対応していません。
+- `whisperBeforeRevote`: 5人人狼において使用されない項目であるため不要と判断し対応していません。
+
