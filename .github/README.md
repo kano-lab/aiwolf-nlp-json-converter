@@ -13,3 +13,7 @@
 - `latestExecutedAgent`: `executedAgent`の値から確認できる内容であるため不要と判断し対応していません。
 - `latestVoteList`: `voteList`から確認できる内容であるため不要と判断し対応していません。
 - `mediumResult`: 5人人狼において使用されない項目であるため不要と判断し対応していません。
+- `remainTalkMap`: 旧サーバにおいて`INITIALIZE`,`DAILY_INITIALIZE`でのみ付与されていた情報である上、`maxTalk`から取得可能な内容であるため不要と判断し対応していません。
+- `remainWhisperMap`: 5人人狼において`whisper`は行われないため不要と判断し対応していません。
+- `talkList`:  旧サーバにおいて`INITIALIZE`,`DAILY_INITIALIZE`でのみ付与されていた情報である上、`talkHistory`から取得可能な内容であるため不要と判断し対応していません。
+- `whisperList`: 5人人狼において使用されない項目であるため不要と判断し対応していません。
