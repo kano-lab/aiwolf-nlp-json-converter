@@ -5,7 +5,7 @@ from talkHistory import talkHistoryConverter
 from whisperHistory import whisperHistoryConverter
 
 
-class Converter:
+class AIWolfNLPJsonConverter:
     @classmethod
     def get_json_dict(received_str: str) -> dict:
         protocol: CommunicationProtocol = CommunicationProtocol.initialize_from_json(
