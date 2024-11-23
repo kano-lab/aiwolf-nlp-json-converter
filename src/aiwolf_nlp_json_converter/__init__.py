@@ -1,1 +1,1 @@
-from converter import AIWolfNLPJsonConverter
+from .converter import AIWolfNLPJsonConverter
