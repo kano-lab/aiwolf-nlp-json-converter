@@ -1,6 +1,8 @@
 from aiwolf_nlp_common.protocol import CommunicationProtocol
 from gameInfo import gameInfoConverter
 from gameSetting import gameSettingConverter
+from talkHistory import talkHistoryConverter
+from whisperHistory import whisperHistoryConverter
 
 
 class Converter:
@@ -17,4 +19,10 @@ class Converter:
         )
         before_json_dict["gameSetting"] = gameSettingConverter.get_game_setting_dict(
             protocol=protocol
+        )
+        before_json_dict["talkHistory"] = talkHistoryConverter.get_talk_history_list(
+            protocol=protocol
+        )
+        before_json_dict["whisperHistory"] = (
+            whisperHistoryConverter.get_whisper_history_list(protocol=protocol)
         )
