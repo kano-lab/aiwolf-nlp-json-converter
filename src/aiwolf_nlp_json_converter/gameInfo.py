@@ -13,7 +13,7 @@ from aiwolf_nlp_common.protocol.info.map import (
 
 class gameInfoConverter:
     @classmethod
-    def get_game_info_dict(cls, protocol: CommunicationProtocol) -> dict:
+    def get_game_info_dict(cls, protocol: CommunicationProtocol) -> dict | None:
         game_info: dict = dict()
 
         if protocol.is_info_empty():
