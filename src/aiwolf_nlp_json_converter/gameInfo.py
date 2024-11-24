@@ -38,6 +38,8 @@ class gameInfoConverter:
             vote_list=protocol.info.vote_list
         )
 
+        return game_info
+
     @classmethod
     def get_vote_list_info(cls, vote_list: VoteList | AttackVoteList) -> list[dict]:
         result: list = list()
@@ -95,3 +97,5 @@ class gameInfoConverter:
         status_map_element: AgentStatus
         for status_map_element in status_map:
             result[status_map_element.agent] = status_map_element.status.value
+
+        return result
