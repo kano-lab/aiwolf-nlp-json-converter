@@ -26,6 +26,7 @@ class gameSettingConverter:
             role_num_map=protocol.setting.role_num_map
         )
         game_setting["talkOnFirstDay"] = protocol.setting.is_talk_on_first_day
+        game_setting["responseTimeout"] = protocol.setting.response_timeout
         game_setting["actionTimeout"] = protocol.setting.action_timeout
         game_setting["voteVisible"] = protocol.setting.is_vote_visible
 
