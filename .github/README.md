@@ -18,12 +18,14 @@ from aiwolf_nlp_json_converter import AIWolfNLPJsonConverter
 recv:str = """{"request":"INITIALIZE","info":{"day":0,"agent":"Agent[05]","statusMap":{"Agent[01]":"ALIVE","Agent[02]":"ALIVE","Agent[03]":"ALIVE","Agent[04]":"ALIVE","Agent[05]":"ALIVE"},"roleMap":{"Agent[05]":"VILLAGER"}},"setting":{"playerNum":5,"maxTalk":5,"maxTalkTurn":20,"maxWhisper":5,"maxWhisperTurn":20,"maxSkip":0,"isEnableNoAttack":false,"isVoteVisible":false,"isTalkOnFirstDay":true,"responseTimeout":120000,"actionTimeout":60000,"maxRevote":1,"maxAttackRevote":1,"roleNumMap":{"BODYGUARD":0,"MEDIUM":0,"POSSESSED":1,"SEER":1,"VILLAGER":2,"WEREWOLF":1}}}"""
 json_data = AIWolfNLPJsonConverter.get_json_dict(received_str=recv)
 
+print(type(json_data))
 print(json_data)
 ```
 
 ### 結果
 ```
-{'request': 'INITIALIZE', 'gameInfo': {'agent': 'Agent[05]', 'attackVoteList': [], 'attackedAgent': None, 'day': 0, 'divineResult': None, 'executedAgent': None, 'lastDeadAgentList': [], 'roleMap': {'Agent[05]': 'VILLAGER'}, 'statusMap': {'Agent[03]': 'ALIVE', 'Agent[05]': 'ALIVE', 'Agent[01]': 'ALIVE', 'Agent[04]': 'ALIVE', 'Agent[02]': 'ALIVE'}, 'voteList': []}, 'gameSetting': {'enableNoAttack': False, 'enableNoExecution': False, 'maxAttackRevote': 1, 'maxRevote': 1, 'maxSkip': 0, 'maxTalk': 5, 'maxTalkTurn': 20, 'maxWhisper': 5, 'maxWhisperTurn': 20, 'playerNum': 5, 'roleNumMap': {'SEER': 1, 'WEREWOLF': 1, 'POSSESSED': 1, 'MEDIUM': 0, 'VILLAGER': 2, 'BODYGUARD': 0}, 'talkOnFirstDay': True, 'responseTimeout': 120, 'actionTimeout': 60, 'voteVisible': False}, 'talkHistory': [], 'whisperHistory': []}
+<class 'dict'>
+{'request': 'INITIALIZE', 'gameInfo': {'agent': 'Agent[05]', 'attackVoteList': [], 'attackedAgent': None, 'day': 0, 'divineResult': None, 'executedAgent': None, 'lastDeadAgentList': [], 'roleMap': {'Agent[05]': 'VILLAGER'}, 'statusMap': {'Agent[02]': 'ALIVE', 'Agent[04]': 'ALIVE', 'Agent[01]': 'ALIVE', 'Agent[03]': 'ALIVE', 'Agent[05]': 'ALIVE'}, 'voteList': []}, 'gameSetting': {'enableNoAttack': False, 'enableNoExecution': False, 'maxAttackRevote': 1, 'maxRevote': 1, 'maxSkip': 0, 'maxTalk': 5, 'maxTalkTurn': 20, 'maxWhisper': 5, 'maxWhisperTurn': 20, 'playerNum': 5, 'roleNumMap': {'SEER': 1, 'VILLAGER': 2, 'MEDIUM': 0, 'BODYGUARD': 0, 'POSSESSED': 1, 'WEREWOLF': 1}, 'talkOnFirstDay': True, 'responseTimeout': 120, 'actionTimeout': 60, 'voteVisible': False}, 'talkHistory': [], 'whisperHistory': []}
 ```
 
 ## 対応していないキー
