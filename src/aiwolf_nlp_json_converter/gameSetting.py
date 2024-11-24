@@ -6,7 +6,7 @@ from aiwolf_nlp_common.protocol.setting.map import RoleNumInfo, RoleNumMap
 
 class gameSettingConverter:
     @classmethod
-    def get_game_setting_dict(cls, protocol: CommunicationProtocol) -> dict:
+    def get_game_setting_dict(cls, protocol: CommunicationProtocol) -> dict | None:
         game_setting: dict = dict()
 
         if protocol.is_setting_empty():
@@ -28,6 +28,8 @@ class gameSettingConverter:
         game_setting["talkOnFirstDay"] = protocol.setting.is_talk_on_first_day
         game_setting["actionTimeout"] = protocol.setting.action_timeout
         game_setting["voteVisible"] = protocol.setting.is_vote_visible
+
+        return game_setting
 
     @classmethod
     def get_role_num_map(cls, role_num_map: RoleNumMap) -> dict:
