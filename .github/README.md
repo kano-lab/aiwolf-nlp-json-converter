@@ -10,6 +10,22 @@
 > このプログラムは2024冬季大会の開催告知から開催までの期間が短いため作成しました。 \
 > 今後のアップデートや2025年春大会以降の13人人狼に必要な情報に対応しない可能性があります。
 
+## 使い方
+ゲームサーバから受け取った文字列の情報をそのまま`AIWolfNLPJsonConverter`に渡すことで、旧ゲームサーバから伝達される情報に変換します。
+```python
+from aiwolf_nlp_json_converter import AIWolfNLPJsonConverter
+
+recv:str = """{"request":"INITIALIZE","info":{"day":0,"agent":"Agent[05]","statusMap":{"Agent[01]":"ALIVE","Agent[02]":"ALIVE","Agent[03]":"ALIVE","Agent[04]":"ALIVE","Agent[05]":"ALIVE"},"roleMap":{"Agent[05]":"VILLAGER"}},"setting":{"playerNum":5,"maxTalk":5,"maxTalkTurn":20,"maxWhisper":5,"maxWhisperTurn":20,"maxSkip":0,"isEnableNoAttack":false,"isVoteVisible":false,"isTalkOnFirstDay":true,"responseTimeout":120000,"actionTimeout":60000,"maxRevote":1,"maxAttackRevote":1,"roleNumMap":{"BODYGUARD":0,"MEDIUM":0,"POSSESSED":1,"SEER":1,"VILLAGER":2,"WEREWOLF":1}}}"""
+json_data = AIWolfNLPJsonConverter.get_json_dict(received_str=recv)
+
+print(json_data)
+```
+
+### 結果
+```
+{'request': 'INITIALIZE', 'gameInfo': {'agent': 'Agent[05]', 'attackVoteList': [], 'attackedAgent': None, 'day': 0, 'divineResult': None, 'executedAgent': None, 'lastDeadAgentList': [], 'roleMap': {'Agent[05]': 'VILLAGER'}, 'statusMap': {'Agent[03]': 'ALIVE', 'Agent[05]': 'ALIVE', 'Agent[01]': 'ALIVE', 'Agent[04]': 'ALIVE', 'Agent[02]': 'ALIVE'}, 'voteList': []}, 'gameSetting': {'enableNoAttack': False, 'enableNoExecution': False, 'maxAttackRevote': 1, 'maxRevote': 1, 'maxSkip': 0, 'maxTalk': 5, 'maxTalkTurn': 20, 'maxWhisper': 5, 'maxWhisperTurn': 20, 'playerNum': 5, 'roleNumMap': {'SEER': 1, 'WEREWOLF': 1, 'POSSESSED': 1, 'MEDIUM': 0, 'VILLAGER': 2, 'BODYGUARD': 0}, 'talkOnFirstDay': True, 'responseTimeout': 120, 'actionTimeout': 60, 'voteVisible': False}, 'talkHistory': [], 'whisperHistory': []}
+```
+
 ## 対応していないキー
 [旧ゲームサーバ](https://github.com/aiwolfdial/AIWolfNLPServer)から与えられる情報の内、本プログラムではいくつか含まれていない情報が存在します。 \
 下記に詳細を記載しますので、ご確認の上ご使用ください。
