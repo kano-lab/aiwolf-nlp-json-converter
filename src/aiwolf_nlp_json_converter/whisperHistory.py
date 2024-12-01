@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from aiwolf_nlp_common.protocol import CommunicationProtocol
+from aiwolf_nlp_common.protocol import Packet
 from .talkHistory import talkHistoryConverter
 
 
 class whisperHistoryConverter(talkHistoryConverter):
     @classmethod
-    def get_whisper_history_list(cls, protocol: CommunicationProtocol) -> list:
-        if protocol.is_whisper_hisotry_empty():
+    def get_whisper_history_list(cls, protocol: Packet) -> list:
+        if protocol.whisper_history is None:
             return None
 
         return cls.get_communication_history(

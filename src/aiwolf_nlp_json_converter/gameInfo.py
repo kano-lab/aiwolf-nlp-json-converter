@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from aiwolf_nlp_common.protocol import CommunicationProtocol
+from aiwolf_nlp_common.protocol import Packet
 from aiwolf_nlp_common.protocol.info.list import VoteInfo, VoteList, AttackVoteList
 from aiwolf_nlp_common.protocol.info.result import DivineResult, MediumResult
 from aiwolf_nlp_common.protocol.info.map import (
@@ -13,10 +13,10 @@ from aiwolf_nlp_common.protocol.info.map import (
 
 class gameInfoConverter:
     @classmethod
-    def get_game_info_dict(cls, protocol: CommunicationProtocol) -> dict | None:
+    def get_game_info_dict(cls, protocol: Packet) -> dict | None:
         game_info: dict = dict()
 
-        if protocol.is_info_empty():
+        if protocol.info is None:
             return None
 
         game_info["agent"] = protocol.info.agent

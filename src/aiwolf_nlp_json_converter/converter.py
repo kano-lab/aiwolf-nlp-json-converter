@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from aiwolf_nlp_common.protocol import CommunicationProtocol
+import json
+from aiwolf_nlp_common.protocol import Packet
 from .gameInfo import gameInfoConverter
 from .gameSetting import gameSettingConverter
 from .talkHistory import talkHistoryConverter
@@ -10,9 +11,7 @@ from .whisperHistory import whisperHistoryConverter
 class AIWolfNLPJsonConverter:
     @classmethod
     def get_json_dict(cls, received_str: str) -> dict:
-        protocol: CommunicationProtocol = CommunicationProtocol.initialize_from_json(
-            received_str=received_str
-        )
+        protocol: Packet = Packet(value=json.loads(received_str))
 
         before_json_dict = dict()
         before_json_dict["request"] = protocol.request

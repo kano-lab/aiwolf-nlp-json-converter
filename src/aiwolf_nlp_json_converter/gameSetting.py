@@ -1,15 +1,15 @@
 from __future__ import annotations
 
-from aiwolf_nlp_common.protocol import CommunicationProtocol
+from aiwolf_nlp_common.protocol import Packet
 from aiwolf_nlp_common.protocol.setting.map import RoleNumInfo, RoleNumMap
 
 
 class gameSettingConverter:
     @classmethod
-    def get_game_setting_dict(cls, protocol: CommunicationProtocol) -> dict | None:
+    def get_game_setting_dict(cls, protocol: Packet) -> dict | None:
         game_setting: dict = dict()
 
-        if protocol.is_setting_empty():
+        if protocol.setting is None:
             return None
 
         game_setting["enableNoAttack"] = protocol.setting.is_enable_no_attack
