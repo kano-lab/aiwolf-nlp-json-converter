@@ -1,4 +1,4 @@
-aiwolf_nlp_common==0.2.1
+aiwolf-nlp-common==0.3.5
 backports.tarfile==1.2.0
 bcrypt==4.2.0
 build==1.2.2.post1
@@ -25,7 +25,6 @@ nh3==0.2.18
 packaging==24.2
 paramiko==3.5.0
 pathspec==0.12.1
-pkg_resources==0.0.0
 pkginfo==1.10.0
 pluggy==1.5.0
 pycparser==2.22
