@@ -17,7 +17,7 @@ pip install aiwolf-nlp-json-converter
 ```
 
 > [!WARNING]
-> `aiwolf-nlp-json-converter==0.2.0`, `aiwolf-nlp-common==0.3.5`であることを確認してください。
+> `aiwolf-nlp-json-converter==0.3.0`, `aiwolf-nlp-common==0.3.5`であることを確認してください。
 
 ## 使い方
 ゲームサーバから受け取った文字列の情報をそのまま`AIWolfNLPJsonConverter`に渡すことで、旧ゲームサーバから伝達される情報に変換します。
